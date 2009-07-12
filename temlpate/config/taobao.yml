@@ -1,0 +1,19 @@
+development:
+  api_key: 
+  secret_key: 
+  v: 
+  format:
+  host:
+  callback_url:
+
+test:
+  api_key: 
+  secret_key: 
+  v: 
+  format:
+
+production:
+  api_key: 
+  secret_key: 
+  v: 
+  format:

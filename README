@@ -1,0 +1,33 @@
+OpenTaobao
+==========
+
+open.taobao.com 插件,更方便的调用taobao open api,目前是实现两个方法
+
+1: 目前只能作为测试用户，跑在测试环境下
+2: 目前实现两个方法，以后会更多
+
+安装
+======
+先安装rest client,
+ruby script/plugin install git://github.com/adamwiggins/rest-client.git
+
+
+使用
+=======
+#fields和nick是taobao的taobao.shop.get参数,文档见http://wiki.open.taobao.com/index.php/Taobao.shop.get  
+OpenTaobao::Shop.get(:fields =>'sid,cid,nick,title,desc,bulletin,pic_path,created,modified',
+                                      :nick => 'alipublic05')
+
+
+#这里要用倒taobao的回掉session, http://open.taobao.com/isv/appTest.php?你的app_key 
+OpenTaobao::Shop::Cart.get_list(:session => params[:top_session])
+
+
+To-do
+=====
+1: 更多方法
+2: 生产环境使用
+3: 添加测试
+
+
+Copyright (c) 2009 [stephen - wear6365022#gmail.com], released under the MIT license
