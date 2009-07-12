@@ -11,6 +11,9 @@ open.taobao.com 插件,更方便的调用taobao open api,目前是实现两个�
 先安装rest client,
 ruby script/plugin install git://github.com/adamwiggins/rest-client.git
 
+安装open-taobao
+ruby script/plugin install git://github.com/wear/open-taobao.git
+(把vendor/plugin/open_taoba/template/config/taobao.yml复制倒config目录下并配置你的app)
 
 使用
 =======
