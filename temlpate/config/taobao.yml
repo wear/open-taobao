@@ -1,9 +1,9 @@
 development:
   api_key: 
   secret_key: 
-  v: 
-  format:
-  host:
+  v: 1.0
+  format: # xml or json
+  host: #sandbox or prod
   callback_url:
 
 test:

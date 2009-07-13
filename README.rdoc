@@ -15,13 +15,12 @@ crack
 
 安装open-taobao
   >> ruby script/plugin install git://github.com/wear/open-taobao.git
-
+  # 把vendor/plugin/open_taoba/template/config/taobao.yml复制倒config目录下并配置
 
 == 使用 
 
-OpenTaobao.get_with(:method =>'taobao.sellercats.list.get',:nick => 'alipublic23')  
-
-# 需要调用的方法名和这个方法的必要参数
+  $ OpenTaobao.get_with(:method =>'taobao.sellercats.list.get',:nick => 'alipublic23')  
+  # 需要调用的方法名和这个方法的必要参数
 
 == To-do
 
