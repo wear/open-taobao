@@ -1,0 +1,33 @@
+= OpenTaobao
+
+open.taobao.com 插件,更方便的调用taobao open api
+
+* 目前只能作为测试用户，跑在测试环境下
+* 暂只支持get方法
+
+== 安装
+
+先安装依赖
+rest client,
+  >> ruby script/plugin install git://github.com/adamwiggins/rest-client.git
+crack  
+  >> ruby script/plugin git://github.com/jnunemaker/crack.git
+
+安装open-taobao
+  >> ruby script/plugin install git://github.com/wear/open-taobao.git
+
+
+== 使用 
+
+OpenTaobao.get_with(:method =>'taobao.sellercats.list.get',:nick => 'alipublic23')  
+
+# 需要调用的方法名和这个方法的必要参数
+
+== To-do
+
+* 更多方法
+* 生产环境使用
+* 添加测试
+
+
+Copyright (c) 2009 [stephen - wear6365022#gmail.com], released under the MIT license
