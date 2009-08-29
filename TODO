@@ -1,0 +1,7 @@
+
+2009-8-29
+1.功能测试结构调整,考虑只测试功能，使用unit::test即可。顺便学习unit test一下.
+2.此plugin需要rest-client,crack两个plugin作为dependence.
+  所以直接clone下来，还不能直接作测试，需要rails目录环境。不知如何是好。
+3.在./script/generate install时，在install.rb里有直接复制taobao.yml的操作，但测试过无效。参考map4r plugin，它的可以。查看了一下，还没有找到错误点。
+4.在git clone时，出现git not found，烦!
