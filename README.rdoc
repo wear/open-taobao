@@ -1,6 +1,6 @@
 Copyright (c) 2009 [stephen - wear6365022#gmail.com], released under the MIT license
 
-contributer:tommyxiao - xiaods@gmail.com
+committer:tommyxiao - xiaods@gmail.com
 let open Taobao be Bad!
 
 = OpenTaobao
