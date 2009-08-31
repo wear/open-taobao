@@ -1,3 +1,5 @@
+require 'digest/md5' 
+
 # OpenTaobao
 module OpenTaobao               
   
@@ -63,7 +65,7 @@ module OpenTaobao
     end
 
     def generate_sign(pasted)
-     #  Digest::MD5.hexdigest("716be49fa01c839b302abc2ef40e3f56" + generate_params.to_s).upcase
+      # Digest::MD5.hexdigest("716be49fa01c839b302abc2ef40e3f56" + generate_params.to_s).upcase
      Digest::MD5.hexdigest(@taobao_configuration['secret_key'] + pasted.to_s).upcase
     end
     
