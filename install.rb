@@ -1,10 +1,6 @@
-# Install hook code here
-require 'fileutils'
-require 'rubygems'
 
-dir = File.dirname(__FILE__)
-config = File.join('config', 'taobao.yml')   
-
-FileUtils.cp File.join(templates, config), File.join(RAILS_ROOT, config) unless File.exist?(File.join(RAILS_ROOT, config))
-
-puts IO.read(File.join(dir, 'README'))
+dest_file = File.join(RAILS_ROOT, "config/taobao.yml")
+src_file = File.join(File.dirname(__FILE__) , 'template/config/taobao.yml')
+FileUtils.cp_r(src_file, dest_file)
+ 
+puts IO.read(File.join(File.dirname(__FILE__), 'README'))
