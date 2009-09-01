@@ -1,7 +1,6 @@
 Copyright (c) 2009 [stephen - wear6365022#gmail.com], released under the MIT license
 
-committer:tommyxiao - xiaods@gmail.com
-let open Taobao be Bad!
+contributer - xiaods@gmail.com
 
 = OpenTaobao
 
@@ -20,7 +19,8 @@ crack
 
 安装open-taobao
   >> ruby script/plugin install git://github.com/wear/open-taobao.git
-  # 把vendor/plugin/open_taoba/template/config/taobao.yml复制倒config目录下并配置
+
+配置config目录下的taobao.yml, api_key,secret_key,v,format,host 必须设置   
 
 == 使用 
 
