@@ -1,3 +1,8 @@
+Copyright (c) 2009 [stephen - wear6365022#gmail.com], released under the MIT license
+
+committer:tommyxiao - xiaods@gmail.com
+let open Taobao be Bad!
+
 = OpenTaobao
 
 open.taobao.com 插件,更方便的调用taobao open api
@@ -11,7 +16,7 @@ open.taobao.com 插件,更方便的调用taobao open api
 rest client,
   >> ruby script/plugin install git://github.com/adamwiggins/rest-client.git
 crack  
-  >> ruby script/plugin git://github.com/jnunemaker/crack.git
+  >> ruby script/plugin install git://github.com/jnunemaker/crack.git
 
 安装open-taobao
   >> ruby script/plugin install git://github.com/wear/open-taobao.git
@@ -29,4 +34,3 @@ crack
 * 添加测试
 
 
-Copyright (c) 2009 [stephen - wear6365022#gmail.com], released under the MIT license
