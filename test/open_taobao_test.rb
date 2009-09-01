@@ -13,7 +13,7 @@ class OpenTaobaoTest < Test::Unit::TestCase
   
 
   def test_sellercats
-    result=OpenTaobao.get_with(:method =>'taobao.sellercats.list.get',:nick => 'alipublic23')
+    result = OpenTaobao.get_with(:method =>'taobao.sellercats.list.get',:nick => 'alipublic23')
     puts result
   end
 
