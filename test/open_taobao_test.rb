@@ -46,17 +46,17 @@ class OpenTaobaoTest < Test::Unit::TestCase
   
   
   # taobao.sellercats.list.add:添加卖家自定义类目
-  #必须使用post方式,url_encode必须要能把中文编码成unicode
-  #参数必须按升序排列
   def test_taobao_sellercats_list_add
-   session = "1d92ad2e6f7ca348d2d50d3b09a589758"
+   session = "1574ce783ccf02ee523ac286d88dc570e"
+   
    result = OpenTaobao.post_with(:method =>'taobao.sellercats.list.add',
-                                :name => "红酒",
-                                :pict_url => "http://assets.taobaocdn.com/app/top/isv/logo.png",
-                                :parent_cid => "0",
-                                :sort_order => "1",
-                                :session => session
+                                 :name => "红酒22",
+                                 :pict_url => "http://assets.taobaocdn.com/app/top/isv/logo.png",
+                                 :parent_cid => "0",
+                                 :sort_order => "1",
+                                 :session => session
                                 )
+   
    puts result
   end
 
