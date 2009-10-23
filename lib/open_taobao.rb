@@ -29,6 +29,7 @@ module OpenTaobao
       case @taobao_configuration['host']
       when 'sandbox'
         "http://gw.api.tbsandbox.com/router/rest?" + url_params(pasted)
+        puts  "http://gw.api.tbsandbox.com/router/rest?" + url_params(pasted)
       when 'prod'
        # something
      end
@@ -41,7 +42,7 @@ module OpenTaobao
     
     def post_with(joined_params = {})
        pra = pasted_params.reverse_merge!(joined_params)
-       parse_result RestClient.post(generate_url(pra),:content_type => 'text/plain; charset=UTF-8' )       
+       parse_result RestClient.post(generate_url(pra),:content_type => 'text/plain; charset=UTF-8')       
     end
     
     #支持中文
@@ -49,9 +50,10 @@ module OpenTaobao
       return str.gsub!(/[^a-zA-Z0-9_\.\-]/n) {|x| x = format('%%%02x', x[0]) }
     end 
 
+    #按ASC正排序转换URL
     def url_params(pasted)
-      total_param = pasted.to_a.collect{|key,value| key.to_s+"="+value.to_s} + ["sign=#{generate_sign(pasted)}"]
-      url_encode(total_param.join("&"))
+      all = pasted.keys.sort{|a,b|a.to_s <=> b.to_s}.collect{|k| k.to_s.concat("=").concat(pasted[k].to_s)}.join("&")
+      url_encode(all)
     end
 
     def pasted_params

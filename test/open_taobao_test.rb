@@ -66,9 +66,9 @@ class OpenTaobaoTest < Test::Unit::TestCase
    session = "1d92ad2e6f7ca348d2d50d3b09a589758"
    result = OpenTaobao.post_with(:method =>'taobao.sellercats.list.add',
                                 :name => "红酒",
-                                # :pict_url => "http://assets.taobaocdn.com/app/top/isv/logo.png",
-                                # :parent_cid => "0",
-                                # :sort_order => "1",
+                                :pict_url => "http://assets.taobaocdn.com/app/top/isv/logo.png",
+                                :parent_cid => "0",
+                                :sort_order => "1",
                                 :session => session
                                 )
    puts result
