@@ -1,5 +1,9 @@
 
-2009-8-29
+2009-10-23
+1，实现post方式成功
+
+
+2009-8-29 => done
 1.功能测试结构调整,考虑只测试功能，使用unit::test即可。顺便学习unit test一下.
 
 2.此plugin需要rest-client,crack两个plugin作为dependence.

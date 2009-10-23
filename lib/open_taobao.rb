@@ -29,7 +29,6 @@ module OpenTaobao
       case @taobao_configuration['host']
       when 'sandbox'
         "http://gw.api.tbsandbox.com/router/rest?" + url_params(pasted)
-        puts  "http://gw.api.tbsandbox.com/router/rest?" + url_params(pasted)
       when 'prod'
        # something
      end
@@ -37,23 +36,24 @@ module OpenTaobao
     
     def get_with(joined_params = {})
        pra = pasted_params.reverse_merge!(joined_params)
-       parse_result RestClient.get(generate_url(pra))       
+       parse_result RestClient.get(generate_url(pra),:content_type => 'text/html; charset=UTF-8')       
     end   
     
     def post_with(joined_params = {})
        pra = pasted_params.reverse_merge!(joined_params)
-       parse_result RestClient.post(generate_url(pra),:content_type => 'text/plain; charset=UTF-8')       
+       parse_result RestClient.post(generate_url(pra),:content_type => 'text/html; charset=UTF-8' )       
     end
     
     #支持中文
     def url_encode(str)
-      return str.gsub!(/[^a-zA-Z0-9_\.\-]/n) {|x| x = format('%%%02x', x[0]) }
+      return str.to_s.gsub(/[^a-zA-Z0-9_\-.]/n){ sprintf("%%%02X", $&.unpack("C")[0]) }
     end 
 
     #按ASC正排序转换URL
     def url_params(pasted)
-      all = pasted.keys.sort{|a,b|a.to_s <=> b.to_s}.collect{|k| k.to_s.concat("=").concat(pasted[k].to_s)}.join("&")
-      url_encode(all)
+      pasted.merge!({:sign => "#{generate_sign(pasted)}"})
+      total_params = pasted.keys.sort{|a,b|a.to_s <=> b.to_s}.collect{|k| k.to_s.concat("=").concat(url_encode( pasted[k].to_s) )}
+      total_params.join("&")
     end
 
     def pasted_params
