@@ -28,7 +28,7 @@ module OpenTaobao
     def generate_url(pasted)
       case @taobao_configuration['host']
       when 'sandbox'
-        "http://gw.sandbox.taobao.com/router/rest?" + url_params(pasted)
+        "http://gw.api.tbsandbox.com/router/rest?" + url_params(pasted)
       when 'prod'
        # something
      end
@@ -41,11 +41,12 @@ module OpenTaobao
     
     def post_with(joined_params = {})
        pra = pasted_params.reverse_merge!(joined_params)
-       parse_result RestClient.post(generate_url(pra),:content_type => 'text/plain' )       
+       parse_result RestClient.post(generate_url(pra),:content_type => 'text/plain; charset=UTF-8' )       
     end
-
+    
+    #支持中文
     def url_encode(str)
-    	return str.gsub!(/[^\w$&\-+.,\/:;=?@]/) { |x| x = format("%%%x", x[0])}
+      return str.gsub!(/[^a-zA-Z0-9_\.\-]/n) {|x| x = format('%%%02x', x[0]) }
     end 
 
     def url_params(pasted)
