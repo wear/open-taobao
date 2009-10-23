@@ -27,7 +27,22 @@ require File.dirname(__FILE__) + '/unit_test_helper'
 
 
 class OpenTaobaoTest < Test::Unit::TestCase
-   
+  # 产品API
+  # taobao.products.search(搜索产品信息)
+   # * 两种方式搜索所有产品信息(二种至少传一种): 
+   # 
+   # 1. 传入关键字q搜索
+   # 2. 传入cid和props搜索
+  # def test_products_search
+  #   result = OpenTaobao.get_with(:method => "taobao.products.search",
+  #                                    :q => "诺基亚",
+  #                                    :fields => "product_id,name"
+  #                                    )
+  #     
+  #   puts result
+  # end
+
+  
 
   #店铺API
   # taobao.shopcats.list.get:获取前台展示的店铺类目
