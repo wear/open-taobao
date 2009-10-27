@@ -30,7 +30,7 @@ module OpenTaobao
       when 'sandbox'
         "http://gw.api.tbsandbox.com/router/rest?" + url_params(pasted)
       when 'prod'
-       # something
+        "http://gw.api.taobao.com/router/rest?" + url_params(pasted)
      end
     end
     

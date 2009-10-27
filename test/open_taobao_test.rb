@@ -46,15 +46,15 @@ class OpenTaobaoTest < Test::Unit::TestCase
 
   #店铺API
   # taobao.shopcats.list.get:获取前台展示的店铺类目
-  def test_taobao_shopcats_list_get
-    result = OpenTaobao.get_with(:method => 'taobao.shopcats.list.get')
-    
-    shop_cats =  result['rsp']['shop_cats']
-    # puts shop_cats.inspect
-    shop_cats.each do |cat|
-      puts cat["parent_cid"]+" "+cat["name"]+" "+cat["is_parent"].to_s+" "+cat["cid"]
-    end
-  end
+  # def test_taobao_shopcats_list_get
+  #   result = OpenTaobao.get_with(:method => 'taobao.shopcats.list.get')
+  #   
+  #   shop_cats =  result['rsp']['shop_cats']
+  #   # puts shop_cats.inspect
+  #   shop_cats.each do |cat|
+  #     puts cat["parent_cid"]+" "+cat["name"]+" "+cat["is_parent"].to_s+" "+cat["cid"]
+  #   end
+  # end
   
   
   #taobao.sellercats.list.get:获取前台展示的店铺内卖家自定义商品类目
